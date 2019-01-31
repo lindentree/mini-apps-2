@@ -26,9 +26,9 @@ app.get('/currencies', (req, res) => {
 app.get('/history', (req, res) => {
   axios.get('https://api.coindesk.com/v1/bpi/historical/close.json?currency=BTC')
   .then((data) => {
-    console.log('init', data.data);
-    let curPrice = data.data.bpi.BTC.rate;
-    res.send(curPrice);
+    console.log('history', data.data);
+    let closingPrices = data.data.bpi;
+    res.send(closingPrices);
   })
   .catch(error => {
     console.log(error)

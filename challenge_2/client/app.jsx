@@ -41,7 +41,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <CurrencyView prices={this.state.prices}/>
+        <CurrencyView prices={this.state.prices} history={this.state.history}/>
         <a className="required" href="https://www.coindesk.com/price/bitcoin">Powered by CoinDesk</a>
       </div>
       )
