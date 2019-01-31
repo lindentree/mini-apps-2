@@ -7,10 +7,10 @@ let chartOptions = {
   scales: {
             yAxes: [{
                 ticks: {
-                    min: 3500,
-                    max: 4000,
-                    stepSize: 50,
-                    showLine: true
+                    min: 3000,
+                    max: 5000,
+                    stepSize: 100,
+                    showLine: false
                 }
             }]
           },
@@ -28,16 +28,18 @@ export default class CurrencyView extends React.Component {
 
 
   parsePropData() {
+    let pastIntervals = Object.keys(this.props.history);
     let closingPrices = Object.keys(this.props.history).map((prices)=>{
                 return this.props.history[prices];
               })
     //console.log('parser', closingPrices)
 
     let chartData = {
-      labels: ["Previous 31 Days"],
+      labels: pastIntervals,
       datasets: [{
         label: "Bitcoin closing prices",
         borderColor: 'rgb(255, 99, 132)',
+        lineTension: 0,
         data: closingPrices,
         }]      
     }
@@ -61,7 +63,6 @@ export default class CurrencyView extends React.Component {
           <div className="history">
             <Line
               data={this.parsePropData}
-              options={chartOptions}
               height={500}
               width={700}
             />
