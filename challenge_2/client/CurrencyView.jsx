@@ -9,7 +9,7 @@ export default class CurrencyView extends React.Component {
   render() {
     return (
      <div className="currency-view">
-       Hello World
+       Bitcoin current price: {this.props.prices}
      </div>
 
     )
