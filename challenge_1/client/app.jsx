@@ -58,14 +58,13 @@ class App extends React.Component {
           <input
             placeholder="Search for..."
             ref={input => this.search = input}
-            onChange={this.handleInputChange}
-            
+            onChange={this.handleInputChange}   
           />
           <p>{this.props.query}</p>
         </form>
         <button onClick={this.getSearchedEvents}>
               Search
-          </button>
+        </button>
         <Events data={this.state.results} />
       </div>
       )
