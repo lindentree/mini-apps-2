@@ -1,0 +1,9 @@
+.required {
+  text-align: center;
+  display: block;
+}
+
+.currency-view {
+  width: 50%;
+  margin: auto; 
+}
