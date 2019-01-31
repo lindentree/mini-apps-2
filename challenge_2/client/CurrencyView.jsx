@@ -1,4 +1,6 @@
 import React from 'react';
+import Chart from '../public/Chart.bundle.js';
+
 
 export default class CurrencyView extends React.Component {
 
@@ -8,10 +10,15 @@ export default class CurrencyView extends React.Component {
 
   render() {
     return (
-     <div className="currency-view">
-       Bitcoin current price: {this.props.prices}
-     </div>
+    <div>
+      <div className="currency-view">
+        Bitcoin current price: {this.props.prices}
+      </div>
 
+      <div className="history">
+        Bitcoin current price: {this.props.prices}
+      </div>
+    </div>
     )
   }
 }

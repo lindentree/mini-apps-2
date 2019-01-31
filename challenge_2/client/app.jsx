@@ -6,7 +6,10 @@ import axios from 'axios';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {prices: null};
+    this.state = {
+      prices: null,
+      history: null
+    };
 
   }
 
@@ -17,6 +20,17 @@ class App extends React.Component {
     .then((data) => {
       let prices = data.data;
       this.setState({prices});
+    })
+    .catch(error => {
+      console.log(error)
+    });
+
+    axios.get('/history', (res) => {
+      console.log(res)
+    })
+    .then((data) => {
+      let history = data.data;
+      this.setState({history});
     })
     .catch(error => {
       console.log(error)
