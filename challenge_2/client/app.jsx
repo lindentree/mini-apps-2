@@ -8,7 +8,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       prices: null,
-      history: null
+      history: null,
+      isToggleOn: false
     };
 
   }

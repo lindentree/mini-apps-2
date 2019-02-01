@@ -63,8 +63,8 @@ export default class CurrencyView extends React.Component {
           <div className="history">
             <Line
               data={this.parsePropData}
-              height={500}
-              width={700}
+              height={200}
+              width={400}
             />
           </div>
         </div>
