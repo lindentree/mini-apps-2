@@ -12,3 +12,15 @@
   width: 50%;
   margin: auto; 
 }
+
+
+.gallery {
+  display: inline-block;
+
+}
+
+
+.symbol {
+  padding: 2px;
+  background-size: cover;
+}

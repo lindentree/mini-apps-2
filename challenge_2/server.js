@@ -1,5 +1,7 @@
 let express = require('express');
 let path = require('path');
+const config = require('./config.js');
+const API_KEY = config.API_KEY;
 
 let axios = require('axios');
 
@@ -29,6 +31,18 @@ app.get('/history', (req, res) => {
     console.log('history', data.data);
     let closingPrices = data.data.bpi;
     res.send(closingPrices);
+  })
+  .catch(error => {
+    console.log(error)
+  });
+
+});
+
+app.get('/coins', (req, res) => {
+  axios.get('https://api.coindesk.com/v1/bpi/historical/close.json?currency=BTC')
+  .then((data) => {
+    console.log('coins', data);
+    res.send(data);
   })
   .catch(error => {
     console.log(error)

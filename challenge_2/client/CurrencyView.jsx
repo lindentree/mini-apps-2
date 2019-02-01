@@ -18,7 +18,6 @@ let chartOptions = {
 };
 
 export default class CurrencyView extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -32,7 +31,7 @@ export default class CurrencyView extends React.Component {
     let closingPrices = Object.keys(this.props.history).map((prices)=>{
                 return this.props.history[prices];
               })
-    //console.log('parser', closingPrices)
+   
 
     let chartData = {
       labels: pastIntervals,
@@ -43,8 +42,6 @@ export default class CurrencyView extends React.Component {
         data: closingPrices,
         }]      
     }
-
-    //console.log('chart', chartData)
     return chartData;
   }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CurrencyView from './CurrencyView.jsx';
+import CurrencySymbolsView from './CurrencySymbolsView,jsx'
 import axios from 'axios';
 
 class App extends React.Component {
@@ -9,15 +10,14 @@ class App extends React.Component {
     this.state = {
       prices: null,
       history: null,
+      coins: null,
       isToggleOn: false
     };
 
   }
 
   componentDidMount() {
-    axios.get('/currencies', (res) => {
-      console.log(res)
-    })
+    axios.get('/currencies')
     .then((data) => {
       let prices = data.data;
       this.setState({prices});
@@ -26,9 +26,7 @@ class App extends React.Component {
       console.log(error)
     });
 
-    axios.get('/history', (res) => {
-      console.log(res)
-    })
+    axios.get('/history')
     .then((data) => {
       let history = data.data;
       this.setState({history});
@@ -36,6 +34,12 @@ class App extends React.Component {
     .catch(error => {
       console.log(error)
     });
+
+    axios.get('/coins')
+    .then((data) => {
+      let coins = data.data;
+      this.setState({coins});
+    })
 
   } 
 
