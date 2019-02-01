@@ -32,7 +32,6 @@ class App extends React.Component {
   getSearchedEvents () {
     axios.get(`/events?q=${this.state.query}&limit=${this.state.perPage}`)
       .then((response) => {
-        console.log('response', response)
         this.setState({
           results: response.data,
           pageCount: Math.ceil(response.data.length / 10),
@@ -63,7 +62,7 @@ class App extends React.Component {
           <p>{this.props.query}</p>
         </form>
         <button onClick={this.getSearchedEvents}>
-              Search
+          Search
         </button>
         <Events data={this.state.results} />
       </div>

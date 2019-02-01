@@ -11,8 +11,8 @@ export default class Events extends React.Component {
        return null;
      } else {
        let eventNodes = this.props.data.map(function(event, index) {
-         let eventSummary = event.description.split('.')
-         return <div key={index}>{eventSummary[0]}</div>;
+         let eventSummary = event.description.split('.');
+         return <div key={index}>{eventSummary[0]}</div>
        });
 
       return (
