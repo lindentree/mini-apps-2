@@ -1,0 +1,26 @@
+.required {
+  text-align: center;
+  display: block;
+}
+
+.currency-view {
+  width: 50%;
+  margin: auto; 
+}
+
+.history {
+  width: 50%;
+  margin: auto; 
+}
+
+
+.gallery {
+  display: inline-block;
+
+}
+
+
+.symbol {
+  padding: 2px;
+  background-size: cover;
+}
